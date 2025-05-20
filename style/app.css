@@ -1,0 +1,85 @@
+/* Public Code */
+:root {
+  --Dark-text: hsl(229, 25%, 31%);
+  --Score-text: hsl(229, 64%, 46%);
+  --Header-outline: hsl(217, 16%, 45%);
+}
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  background-image: linear-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+  color: white;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+button,
+input {
+  border: 0;
+  outline: 0;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  background-color: inherit;
+}
+.container {
+  width: 1366px;
+  margin: 0 auto;
+}
+br {
+  margin: 0;
+  padding: 0;
+}
+
+/* Header App Code */
+
+.header-app {
+  margin: 4rem 0;
+}
+.header-app__wraper {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  outline: 4px solid var(--Header-outline);
+  padding: 1.5rem;
+  border-radius: 1rem;
+}
+.header-app__name {
+  text-transform: uppercase;
+  line-height: 2.15rem;
+  font-size: 1.3rem;
+}
+.header-app__score {
+  background-color: white;
+  width: 11rem;
+  height: 8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 0.8rem;
+}
+.header-app__score span {
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  color: var(--Score-text);
+  display: block;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+.header-app__score h2 {
+  color: var(--Dark-text);
+  display: block;
+  font-size: 4rem;
+}
