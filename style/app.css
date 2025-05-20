@@ -18,7 +18,11 @@ html {
 
 body {
   font-family: "Barlow Semi Condensed", sans-serif;
-  background-image: linear-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+  background-image: linear-gradient(
+    180deg,
+    hsl(214, 47%, 23%),
+    hsl(237, 49%, 15%)
+  );
   color: white;
   background-repeat: no-repeat;
   height: 100vh;
