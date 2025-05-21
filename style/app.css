@@ -47,7 +47,7 @@ br {
 /* Header App Code */
 
 .header-app {
-  margin: 4rem 0;
+  margin: 3rem 0;
 }
 .header-app__wraper {
   width: 60%;
@@ -60,7 +60,7 @@ br {
   border-radius: 1rem;
 }
 .header-app__logo {
-  width: 12rem;
+  width: 11rem;
 }
 .header-app__logo img {
   width: 100%;
@@ -68,7 +68,7 @@ br {
 .header-app__score {
   background-color: white;
   width: 11rem;
-  height: 8rem;
+  height: 7.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
