@@ -87,3 +87,70 @@ br {
   display: block;
   font-size: 4rem;
 }
+
+/* Body App */
+
+.body-app {
+  margin-top: 10rem;
+}
+.body-app__wraper {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.body-app__bg-img {
+  position: relative;
+}
+.body-app__btn {
+  width: 13.5rem;
+  height: 13.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  cursor: pointer;
+}
+.body-app__btn img {
+  width: 4.5rem;
+}
+
+#paperBtn {
+  position: absolute;
+  top: -6rem;
+  left: -6rem;
+  background: linear-gradient(white, white) padding-box,
+    linear-gradient(to bottom, hsl(230, 89%, 62%), hsl(230, 89%, 65%))
+      border-box;
+  border-radius: 50%;
+  border: 1.8rem solid transparent;
+  margin-bottom: 1rem;
+  box-shadow: 0 10px 0 hsla(230, 89%, 65%, 0.65),
+    0 10px 0 rgb(226, 226, 226) inset;
+}
+#rockBtn {
+  position: absolute;
+  bottom: -6rem;
+  left: 3rem;
+  background: linear-gradient(white, white) padding-box,
+    linear-gradient(to bottom, hsl(349, 71%, 52%), hsl(349, 70%, 56%))
+      border-box;
+  border-radius: 50%;
+  border: 1.8rem solid transparent;
+  margin-bottom: 1rem;
+  box-shadow: 0 10px 0 hsla(349, 70%, 56%, 0.65),
+    0 10px 0 rgb(226, 226, 226) inset;
+}
+#scissorsBtn {
+  position: absolute;
+  top: -6rem;
+  left: 12rem;
+  background: linear-gradient(white, white) padding-box,
+    linear-gradient(to bottom, hsl(39, 89%, 49%), hsl(40, 84%, 53%)) border-box;
+  border-radius: 50%;
+  border: 1.8rem solid transparent;
+  margin-bottom: 1rem;
+  box-shadow: 0 10px 0 hsla(40, 84%, 53%, 0.65),
+    0 10px 0 rgb(226, 226, 226) inset;
+}
