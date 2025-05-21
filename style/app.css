@@ -50,7 +50,7 @@ br {
   margin: 4rem 0;
 }
 .header-app__wraper {
-  width: 80%;
+  width: 60%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -59,10 +59,11 @@ br {
   padding: 1.5rem;
   border-radius: 1rem;
 }
-.header-app__name {
-  text-transform: uppercase;
-  line-height: 2.15rem;
-  font-size: 1.3rem;
+.header-app__logo {
+  width: 12rem;
+}
+.header-app__logo img {
+  width: 100%;
 }
 .header-app__score {
   background-color: white;
