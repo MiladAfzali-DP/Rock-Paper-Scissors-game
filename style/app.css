@@ -155,3 +155,31 @@ br {
   box-shadow: 0 10px 0 hsla(40, 84%, 53%, 0.65),
     0 10px 0 rgb(226, 226, 226) inset;
 }
+
+/* Footer App */
+
+.footer-app {
+  margin-top: 6rem;
+}
+.rules-app {
+  /* text-align: center; */
+  display: flex;
+  justify-content: end;
+  margin-right: 2rem;
+}
+#rulesBtn {
+  border: 2px solid white;
+  padding: 0.7rem 3.2rem;
+  color: white;
+  font-size: 1.3rem;
+  border-radius: 0.6rem;
+  text-transform: uppercase;
+  transition: all 250ms ease-in 20ms;
+  cursor: pointer;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+}
+#rulesBtn:hover {
+  background-color: white;
+  color: black;
+}
