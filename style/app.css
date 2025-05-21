@@ -26,6 +26,7 @@ body {
   color: white;
   background-repeat: no-repeat;
   height: 100vh;
+  overflow: hidden;
 }
 
 button,
