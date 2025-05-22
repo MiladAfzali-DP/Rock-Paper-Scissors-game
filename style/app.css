@@ -362,8 +362,9 @@ br {
 }
 
 @media (min-width: 481px) and (max-width: 767px) {
-}
-@media (min-width: 768px) and (max-width: 991px) {
+  .container {
+    width: 100%;
+  }
   body {
     width: 100%;
     height: 100%;
@@ -426,7 +427,7 @@ br {
   }
 
   .results-game__btn button {
-    font-size: 0.9rem;
+    font-size: 0.5rem;
   }
   .results-game__title {
     font-size: 1.5rem;
@@ -444,6 +445,117 @@ br {
 
   .footer-app {
     margin-top: 12rem;
+    margin-bottom: 5rem;
+  }
+  .rules-app {
+    justify-content: center;
+  }
+
+  .modale-rule {
+    /* top: 2rem; */
+    inset: 0;
+    transform: scale(0.8);
+  }
+  .modale-rule__wraper {
+    height: 80%;
+  }
+  .modale-rule__close-btn {
+    transform: scale(1.5);
+  }
+  .modale-rule__body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .modale-rule__body img {
+    width: 70%;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  body {
+    width: 100%;
+    height: 100%;
+  }
+  /* Header App */
+  .header-app {
+    margin: 5rem 0;
+  }
+  .header-app__wraper {
+    width: 100%;
+    border-radius: 0.5rem;
+  }
+
+  /* Body App */
+  .body-app__btn-wraper {
+    margin-top: 5rem;
+  }
+
+  .body-app__btn,
+  .start-game__player-choise,
+  .start-game__bot-choise {
+    width: 11rem;
+    height: 11rem;
+  }
+  .body-app__btn img,
+  .start-game__player-choise img,
+  .start-game__bot-choise img {
+    width: 3.8rem;
+  }
+
+  .start-game {
+    gap: 4rem;
+  }
+
+  .paper-btn,
+  .rock-btn,
+  .scissors-btn {
+    border: 1.4rem solid transparent;
+  }
+
+  .top-left {
+    position: absolute;
+    top: -6rem;
+    left: -5rem;
+  }
+  .top-right {
+    position: absolute;
+    top: -6rem;
+    left: 13rem;
+  }
+  .bottom-center {
+    position: absolute;
+    bottom: -4rem;
+    left: 4rem;
+  }
+
+  .start-game__player-title,
+  .start-game__bot-title {
+    font-size: 1rem;
+  }
+
+  .results-game__btn button {
+    width: 10rem;
+    font-size: 0.9rem;
+  }
+  .results-game__title {
+    font-size: 1.5rem;
+  }
+  .win {
+    transform: scale(1);
+  }
+  .win::after {
+    transform: scale(2);
+  }
+  .win::before {
+    transform: scale(2.7);
+  }
+  /* Footer App */
+
+  .footer-app {
+    margin-top: 8rem;
     margin-bottom: 5rem;
   }
   .rules-app {
