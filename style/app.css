@@ -420,18 +420,36 @@ br {
     left: 4rem;
   }
 
+  .start-game__player-title,
+  .start-game__bot-title {
+    font-size: 1rem;
+  }
+
+  .results-game__title {
+    font-size: 1.5rem;
+  }
+  .win {
+    transform: scale(1);
+  }
+  .win::after {
+    transform: scale(2);
+  }
+  .win::before {
+    transform: scale(2.7);
+  }
   /* Footer App */
 
   .footer-app {
     margin-top: 12rem;
+    margin-bottom: 5rem;
   }
   .rules-app {
     justify-content: center;
   }
 
   .modale-rule {
-    top: 2rem;
-    left: 24rem;
+    /* top: 2rem; */
+    left: 26rem;
     transform: scale(0.8);
   }
 }
