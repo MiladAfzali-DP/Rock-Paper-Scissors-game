@@ -10,11 +10,13 @@ const choisePick = ["paper-btn", "rock-btn", "scissors-btn"];
 //TODO Functions
 
 //? Create Random Number For Choise Bot
-const createRandomNum = (num) => Math.floor(Math.random() * num + 1);
+const createRandomNum = (max, min = 0) =>
+  Math.floor(Math.random() * (max - min) + min);
 
 //? Choise Bot Picked
 const startBotPicked = function (btnBotW, btnBotWHide, pickedBotE) {
-  const choiseIndex = createRandomNum(3) - 1;
+  const choiseIndex = createRandomNum(3);
+  console.log(choiseIndex);
   setTimeout(() => {
     // Hide Defualt Show Choise
     btnBotWHide.classList.add("hidden");
