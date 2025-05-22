@@ -22,8 +22,6 @@ export default function (choises) {
   ).lastElementChild;
 
   resultsGameWraper.classList.remove("hidden");
-  console.log(choises[0]);
-  console.log(choises[1]);
   if (choises[0] === choises[1]) {
     titleResultGame.textContent = "game even";
   } else if (
