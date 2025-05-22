@@ -50,16 +50,45 @@
     <main class="body-app">
       <div class="container">
         <div class="body-app__wraper">
-          <div class="body-app__bg-img">
-            <img src="./images/bg-triangle.svg" alt="" />
-
-            <div class="body-app__btn" id="paperBtn">
+          <div class="start-game hidden">
+            <div class="start-game__player">
+              <div class="start-game__player-title">
+                <h3>You picked</h3>
+              </div>
+              <div class="start-game__player-choise">
+                <img src="./images/icon-paper.svg" alt="" />
+              </div>
+            </div>
+            <div class="start-game__bot">
+              <div class="start-game__bot-nonactive">
+                <div class="start-game__bot-title">
+                  <h3>the house picked</h3>
+                </div>
+                <div class="start-game__bot-choise non-active">
+                  <div class="start-game__bot-choise__box"></div>
+                </div>
+              </div>
+              <div class="start-game__bot-active hidden">
+                <div class="start-game__bot-title">
+                  <h3>the house picked</h3>
+                </div>
+                <div class="start-game__bot-choise bot">
+                  <img src="./images/icon-scissors.svg" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="body-app__btn-wraper">
+            <div class="body-app__bg-img">
+              <img src="./images/bg-triangle.svg" alt="" />
+            </div>
+            <div class="body-app__btn paper-btn top-left">
               <img src="./images/icon-paper.svg" alt="" />
             </div>
-            <div class="body-app__btn" id="rockBtn">
+            <div class="body-app__btn rock-btn top-right">
               <img src="./images/icon-rock.svg" alt="" />
             </div>
-            <div class="body-app__btn" id="scissorsBtn">
+            <div class="body-app__btn scissors-btn bottom-center">
               <img src="./images/icon-scissors.svg" alt="" />
             </div>
           </div>
