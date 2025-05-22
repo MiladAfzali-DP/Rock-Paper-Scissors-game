@@ -95,8 +95,6 @@ br {
 
 /* Body App */
 
-.body-app {
-}
 .body-app__wraper {
   width: 80%;
   margin: 0 auto;
@@ -175,6 +173,7 @@ br {
 /* Start Game App */
 
 .start-game {
+  width: 100%;
   margin-top: 4.5rem;
   display: flex;
   justify-content: center;
@@ -211,14 +210,6 @@ br {
 .start-game__bot-choise img {
   width: 5.5rem;
 }
-.start-game__player-choise {
-}
-.start-game__bot {
-}
-.start-game__bot-title {
-}
-.start-game__bot-choise {
-}
 .non-active {
   background-color: transparent;
 }
@@ -228,6 +219,74 @@ br {
   background-color: rgba(0, 0, 0, 0.1);
   border-radius: 50%;
 }
+
+/* Results Game */
+
+.results-game {
+  width: 100%;
+  text-align: center;
+}
+.results-game__title {
+  width: 100%;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+.results-game__btn {
+  width: 100%;
+  background-color: white;
+  margin-top: 1.5rem;
+  height: 3.4rem;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.results-game__btn button {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+.red {
+  color: red;
+}
+.dark {
+  color: var(--Dark-text);
+}
+
+.win {
+  position: relative;
+  z-index: 100;
+  transform: scale(1.1);
+}
+.win::after {
+  content: "";
+  display: block;
+  background-color: hsla(217, 16%, 45%, 0.1);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transform: scale(2);
+  z-index: -100;
+}
+.win::before {
+  content: "";
+  display: block;
+  background-color: hsla(217, 16%, 45%, 0.06);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transform: scale(3);
+  z-index: -100;
+}
+
 /* Footer App */
 
 .footer-app {
