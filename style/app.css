@@ -130,22 +130,27 @@ br {
 }
 .top-right {
   position: absolute;
-  bottom: -6rem;
-  left: 3rem;
-}
-.bottom-center {
-  position: absolute;
   top: -6rem;
   left: 12rem;
 }
+.bottom-center {
+  position: absolute;
+  bottom: -6rem;
+  left: 3rem;
+}
 
+.paper-btn,
+.rock-btn,
+.scissors-btn {
+  border-radius: 50%;
+  border: 1.6rem solid transparent;
+  margin-bottom: 1rem;
+}
 .paper-btn {
   background: linear-gradient(white, white) padding-box,
     linear-gradient(to bottom, hsl(230, 89%, 62%), hsl(230, 89%, 65%))
       border-box;
-  border-radius: 50%;
-  border: 1.6rem solid transparent;
-  margin-bottom: 1rem;
+
   box-shadow: 0 10px 0 hsla(230, 89%, 65%, 0.65),
     0 10px 0 rgb(226, 226, 226) inset;
 }
@@ -153,18 +158,12 @@ br {
   background: linear-gradient(white, white) padding-box,
     linear-gradient(to bottom, hsl(349, 71%, 52%), hsl(349, 70%, 56%))
       border-box;
-  border-radius: 50%;
-  border: 1.6rem solid transparent;
-  margin-bottom: 1rem;
   box-shadow: 0 10px 0 hsla(349, 70%, 56%, 0.65),
     0 10px 0 rgb(226, 226, 226) inset;
 }
 .scissors-btn {
   background: linear-gradient(white, white) padding-box,
     linear-gradient(to bottom, hsl(39, 89%, 49%), hsl(40, 84%, 53%)) border-box;
-  border-radius: 50%;
-  border: 1.6rem solid transparent;
-  margin-bottom: 1rem;
   box-shadow: 0 10px 0 hsla(40, 84%, 53%, 0.65),
     0 10px 0 rgb(226, 226, 226) inset;
 }
@@ -313,9 +312,11 @@ br {
   background-color: white;
   color: black;
 }
+
 /* Modale Rule */
+
 .modale-rule {
-  position: absolute;
+  position: fixed;
   top: 10rem;
   left: 36rem;
   z-index: 100;
@@ -351,8 +352,8 @@ br {
   background-color: rgba(0, 0, 0, 0.5);
   width: 100%;
   height: 100%;
-  position: absolute;
-  inset: 0;
+  position: fixed;
+  top: 0;
 }
 
 /* Responsive */
@@ -371,6 +372,7 @@ br {
     width: 100%;
     height: 100%;
   }
+  /* Header App */
   .header-app {
     margin: 5rem 0;
   }
@@ -378,12 +380,58 @@ br {
     width: 80%;
     border-radius: 0.5rem;
   }
-  .header-app__logo {
+
+  /* Body App */
+  .body-app__btn-wraper {
+    margin-top: 8rem;
   }
-  .header-app__score {
+
+  .body-app__btn,
+  .start-game__player-choise,
+  .start-game__bot-choise {
+    width: 11rem;
+    height: 11rem;
   }
-  .header-app__score span {
+  .body-app__btn img,
+  .start-game__player-choise img,
+  .start-game__bot-choise img {
+    width: 3.8rem;
   }
-  .header-app__score h2 {
+
+  .paper-btn,
+  .rock-btn,
+  .scissors-btn {
+    border: 1.4rem solid transparent;
+  }
+
+  .top-left {
+    position: absolute;
+    top: -6rem;
+    left: -5rem;
+  }
+  .top-right {
+    position: absolute;
+    top: -6rem;
+    left: 13rem;
+  }
+  .bottom-center {
+    position: absolute;
+    bottom: -4rem;
+    left: 4rem;
+  }
+
+  /* Footer App */
+
+  .footer-app {
+    margin-top: 12rem;
+  }
+  .rules-app {
+    justify-content: center;
+  }
+
+  .modale-rule {
+    top: 2rem;
+    left: 24rem;
+    transform: scale(0.8);
   }
 }
