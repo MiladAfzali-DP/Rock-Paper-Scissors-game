@@ -1,0 +1,11 @@
+.header {
+  padding: clamp(0.5rem, 5vw, 1.5rem);
+  border: 2px solid hsl(217, 16%, 45%);
+  border-radius: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5rem;
+  width: clamp(10rem, 80vw, 40rem);
+  height: clamp(5rem, 30vw, 10rem);
+}
