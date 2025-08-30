@@ -1,0 +1,25 @@
+.main {
+  max-width: 40rem;
+  height: 19.25rem;
+  margin-top: clamp(1rem, 20vw, 6rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-image: url("../../assets/images/bg-pentagon.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+.main__game-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main__bg-image {
+  width: clamp(10rem, 50vw, 20rem);
+}
+.main__bg-image img {
+  width: 100%;
+  /* background-color: red; */
+}

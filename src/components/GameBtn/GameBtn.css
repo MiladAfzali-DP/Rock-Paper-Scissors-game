@@ -1,0 +1,13 @@
+.game-btn {
+  width: clamp(2rem, 20vw, 9rem);
+  height: clamp(2rem, 20vw, 9rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 250ms ease-in 20ms;
+}
+.game-btn:hover {
+  transform: scale(1.05);
+}
