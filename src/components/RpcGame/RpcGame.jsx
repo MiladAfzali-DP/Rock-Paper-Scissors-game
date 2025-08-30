@@ -1,24 +1,46 @@
+import { useState } from "react";
 import "./RpcGame.css";
 import Header from "../Header/Header";
-import "../ScoreBox/ScoreBox";
 import Logo from "../Logo/Logo";
 import ScoreBox from "../ScoreBox/ScoreBox";
-import Main from "../Main/main";
+import GameResult from "../GameResult/GameResult";
+import GameOption from "../GameOption/GameOption";
 import GameBtn from "../GameBtn/GameBtn";
 
+import botChoiceLogic from "../../Logic/botChoiceLogic";
+
 export default function RpcGame() {
+  // Btn Data
   const btnLogicDatas = ["rock", "paper", "scissors", "lizard", "spock"];
+
+  // State Hook
+  const [score, setScore] = useState(0);
+  const [playerChoice, setPlayerChoice] = useState("");
+
+  // Hnadle Fun
+  const handlePlayerChoice = (choice) => setPlayerChoice(choice);
+
+  // if (playerChoice === botChoice) setBotChoice(botChoiceLogic(btnLogicDatas));
+
+  const botChoice = botChoiceLogic(btnLogicDatas);
   return (
     <div className="rpc-game">
       <Header>
         <Logo />
-        <ScoreBox playerScore={12} />
+        <ScoreBox score={score} />
       </Header>
-      <Main>
-        {btnLogicDatas.map((btnData, i) => (
-          <GameBtn img={btnData} index={i} key={i} />
-        ))}
-      </Main>
+      {score || (
+        <GameOption>
+          {btnLogicDatas.map((btnData, i) => (
+            <GameBtn
+              btnMode={btnData}
+              i={i}
+              key={i}
+              onPlayerChoice={handlePlayerChoice}
+            />
+          ))}
+        </GameOption>
+      )}
     </div>
   );
 }

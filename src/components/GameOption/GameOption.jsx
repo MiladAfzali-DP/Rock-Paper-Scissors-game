@@ -1,6 +1,6 @@
-import "./Main.css";
-// import bgImage from "../../assets/images/bg-pentagon.svg";
-export default function Main({ children }) {
+import "./GameOption.css";
+
+export default function GameOption({ children }) {
   return (
     <main className="main">
       {/* <div className="main__bg-image">

@@ -28,14 +28,14 @@ const borderShadow = [
   "hsla(189, 58%, 57%, 0.65)",
 ];
 
-export default function GameBtn({ img, index }) {
+export default function GameBtn({ btnMode, i, onPlayerChoice }) {
   const styleBtn = {
     position: "absolute",
     border: "1.2rem solid transparent",
     background: `linear-gradient(white, white) padding-box,
-    linear-gradient(to bottom, ${borderGradient[index]})
+    linear-gradient(to bottom, ${borderGradient[i]})
       border-box`,
-    boxShadow: `0 8px 0 ${borderShadow[index]},
+    boxShadow: `0 8px 0 ${borderShadow[i]},
     0 8px 0 rgb(226, 226, 226) inset`,
   };
   const stylePos = [
@@ -66,8 +66,12 @@ export default function GameBtn({ img, index }) {
     },
   ];
   return (
-    <div className="game-btn" style={{ ...styleBtn, ...stylePos[index] }}>
-      <img src={imagesDataSrc[img]} alt="" />
+    <div
+      className="game-btn"
+      style={{ ...styleBtn, ...stylePos[i] }}
+      onClick={() => onPlayerChoice(btnMode)}
+    >
+      <img src={imagesDataSrc[btnMode]} alt="" />
     </div>
   );
 }
