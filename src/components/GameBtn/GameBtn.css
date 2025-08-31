@@ -1,6 +1,5 @@
 .game-btn {
-  width: clamp(2rem, 20vw, 9rem);
-  height: clamp(2rem, 20vw, 9rem);
+  aspect-ratio: 1/1;
   display: flex;
   justify-content: center;
   align-items: center;

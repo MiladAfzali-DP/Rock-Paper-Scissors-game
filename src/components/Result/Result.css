@@ -1,0 +1,26 @@
+.result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.result p {
+  color: white;
+  font-weight: bold;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+}
+.result button {
+  width: 10rem;
+  height: 2.5rem;
+  border-radius: 0.2rem;
+  background-color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: hsl(214, 47%, 23%);
+  letter-spacing: 2px;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+}

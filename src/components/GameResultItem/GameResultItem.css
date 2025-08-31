@@ -1,0 +1,22 @@
+.game-result-item p {
+  display: flex;
+  justify-content: center;
+  gap: 15rem;
+  align-items: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 2rem;
+}
+
+.game-result-item div {
+  transform: scale(1);
+  display: flex;
+  justify-content: center;
+  gap: 10rem;
+  align-items: center;
+  cursor: default;
+}
+.game-result-item div:hover {
+  transform: scale(1);
+}

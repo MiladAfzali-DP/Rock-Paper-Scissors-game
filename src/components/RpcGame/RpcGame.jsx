@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./RpcGame.css";
 import Header from "../Header/Header";
 import Logo from "../Logo/Logo";
@@ -6,37 +6,134 @@ import ScoreBox from "../ScoreBox/ScoreBox";
 import GameResult from "../GameResult/GameResult";
 import GameOption from "../GameOption/GameOption";
 import GameBtn from "../GameBtn/GameBtn";
-
+import GameResultItem from "../GameResultItem/GameResultItem";
+import winLogic from "../../Logic/winLogic";
+import Result from "../Result/Result";
 import botChoiceLogic from "../../Logic/botChoiceLogic";
 
+const gameResultPosition = [
+  {
+    bottom: "-2.5rem",
+    right: "10rem",
+  },
+  {
+    top: "2.5rem",
+    left: "6rem",
+  },
+
+  {
+    top: "-4rem",
+    left: 0,
+    right: 0,
+    margin: "0 auto",
+  },
+  {
+    top: "2.5rem",
+    right: "6rem",
+    //   margin: "0 auto",
+  },
+  {
+    bottom: "-2.5rem",
+    left: "10rem",
+    //   margin: "0 auto",
+  },
+];
 export default function RpcGame() {
-  // Btn Data
+  // Data
   const btnLogicDatas = ["rock", "paper", "scissors", "lizard", "spock"];
 
-  // State Hook
+  // State hook
   const [score, setScore] = useState(0);
-  const [playerChoice, setPlayerChoice] = useState("");
+  const [playerChoice, setPlayerChoice] = useState(null);
+  const [botChoice, setBotChoice] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [playerIsWin, setPlayerIsWin] = useState(null);
 
+  // Effect hook
+  useEffect(
+    function () {
+      setTimeout(function () {
+        setIsLoading(false);
+        // if (!playerChoice || !botChoice) return;
+        // setPlayerIsWin(winLogic(playerChoice, botChoice));
+        if (playerIsWin === true) setScore((score) => score + 1);
+        if (playerIsWin === "equal") return;
+        if (playerIsWin === false)
+          setScore((score) => (score < 0 ? score - 1 : score));
+
+        console.log(playerIsWin);
+      }, 500);
+    },
+    [isLoading]
+  );
+
+  useEffect(
+    function () {
+      if (!playerChoice || !botChoice) return;
+      setPlayerIsWin(winLogic(playerChoice, botChoice));
+    },
+    [playerChoice, botChoice]
+  );
   // Hnadle Fun
   const handlePlayerChoice = (choice) => setPlayerChoice(choice);
-
-  // if (playerChoice === botChoice) setBotChoice(botChoiceLogic(btnLogicDatas));
-
-  const botChoice = botChoiceLogic(btnLogicDatas);
+  const handleBotChoice = () => setBotChoice(botChoiceLogic(btnLogicDatas));
+  const handleTurnOnLoading = () => setIsLoading(true);
+  const handleResetGame = () => {
+    setPlayerChoice(null);
+    setBotChoice(null);
+    setPlayerIsWin(null);
+  };
   return (
     <div className="rpc-game">
       <Header>
         <Logo />
         <ScoreBox score={score} />
       </Header>
-      {score || (
+      {playerChoice ? (
+        <GameResult>
+          <GameResultItem title="you picked">
+            <GameBtn
+              width="clamp(2rem, 30vw, 14rem)"
+              borderSize="1.6rem"
+              imgSize="5rem"
+              btnMode={playerChoice}
+              i={btnLogicDatas.findIndex((choice) => playerChoice === choice)}
+              key={0}
+            />
+          </GameResultItem>
+          {playerIsWin === "equal" ? (
+            <Result txt="try again" onResetGame={handleResetGame} />
+          ) : playerIsWin ? (
+            <Result txt="you win" onResetGame={handleResetGame} />
+          ) : (
+            <Result txt="you lose" onResetGame={handleResetGame} />
+          )}
+
+          <GameResultItem title="the house picked">
+            <GameBtn
+              width="clamp(2rem, 30vw, 14rem)"
+              borderSize="1.6rem"
+              imgSize="5rem"
+              btnMode={botChoice}
+              i={btnLogicDatas.findIndex((choice) => botChoice === choice)}
+              key={1}
+              loading={isLoading}
+            />
+          </GameResultItem>
+        </GameResult>
+      ) : (
         <GameOption>
           {btnLogicDatas.map((btnData, i) => (
             <GameBtn
               btnMode={btnData}
               i={i}
               key={i}
-              onPlayerChoice={handlePlayerChoice}
+              onClick={() => {
+                handlePlayerChoice(btnData);
+                handleBotChoice();
+                handleTurnOnLoading();
+              }}
+              btnPosition={gameResultPosition[i]}
             />
           ))}
         </GameOption>

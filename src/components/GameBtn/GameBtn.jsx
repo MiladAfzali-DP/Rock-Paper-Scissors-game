@@ -28,50 +28,47 @@ const borderShadow = [
   "hsla(189, 58%, 57%, 0.65)",
 ];
 
-export default function GameBtn({ btnMode, i, onPlayerChoice }) {
-  const styleBtn = {
-    position: "absolute",
-    border: "1.2rem solid transparent",
-    background: `linear-gradient(white, white) padding-box,
+export default function GameBtn({
+  width = "clamp(2rem, 20vw, 9rem)",
+  borderSize = "1.2rem",
+  imgSize,
+  btnMode,
+  i,
+  onClick = () => {},
+  btnPosition,
+  loading = false,
+}) {
+  let styleBtn;
+  if (loading)
+    styleBtn = {
+      width,
+      backgroundColor: "rgba(0,0,0,0.1)",
+      boxShadow: "0 0 15px rgba(0,0,0,0.08)",
+    };
+  else
+    styleBtn = {
+      width,
+      position: btnPosition ? "absolute" : "static",
+      border: `${borderSize} solid transparent`,
+      background: `linear-gradient(white, white) padding-box,
     linear-gradient(to bottom, ${borderGradient[i]})
       border-box`,
-    boxShadow: `0 8px 0 ${borderShadow[i]},
+      boxShadow: `0 8px 0 ${borderShadow[i]},
     0 8px 0 rgb(226, 226, 226) inset`,
-  };
-  const stylePos = [
-    {
-      bottom: "-2.5rem",
-      right: "10rem",
-    },
-    {
-      top: "2.5rem",
-      left: "6rem",
-    },
-
-    {
-      top: "-4rem",
-      left: 0,
-      right: 0,
-      margin: "0 auto",
-    },
-    {
-      top: "2.5rem",
-      right: "6rem",
-      //   margin: "0 auto",
-    },
-    {
-      bottom: "-2.5rem",
-      left: "10rem",
-      //   margin: "0 auto",
-    },
-  ];
+    };
   return (
     <div
       className="game-btn"
-      style={{ ...styleBtn, ...stylePos[i] }}
-      onClick={() => onPlayerChoice(btnMode)}
+      style={btnPosition ? { ...styleBtn, ...btnPosition } : styleBtn}
+      onClick={onClick}
     >
-      <img src={imagesDataSrc[btnMode]} alt="" />
+      {!loading && (
+        <img
+          src={imagesDataSrc[btnMode]}
+          alt=""
+          style={imgSize && { width: imgSize }}
+        />
+      )}
     </div>
   );
 }

@@ -1,0 +1,6 @@
+.game-result {
+  margin-top: clamp(1rem, 20vw, 4rem);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
