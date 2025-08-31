@@ -1,0 +1,38 @@
+.modale {
+  width: 23rem;
+  height: 26rem;
+  position: absolute;
+  inset: 0;
+  margin: auto auto;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  /* gap: 2rem; */
+  border-radius: 0.8rem;
+  padding: 2.5rem 2rem;
+}
+.modale__header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.modale__header p {
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  color: hsl(217, 16%, 45%);
+}
+.modale__header button {
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: hsl(217, 16%, 45%);
+  outline: 0;
+  border: 0;
+  background-color: inherit;
+}
+.modale img {
+  width: 100%;
+}
