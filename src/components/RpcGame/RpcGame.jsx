@@ -35,7 +35,7 @@ export default function RpcGame() {
           setScore((score) => (score <= 0 ? score : score - 1));
       }, 500);
     },
-    [isLoading]
+    [playerIsWin]
   );
 
   useEffect(
@@ -72,11 +72,13 @@ export default function RpcGame() {
               key={0}
             />
           </GameResultItem>
-          {playerIsWin === "equal" ? (
+          {!isLoading && playerIsWin === "equal" && (
             <Result txt="try again" onResetGame={handleResetGame} />
-          ) : playerIsWin ? (
+          )}
+          {!isLoading && playerIsWin === true && (
             <Result txt="you win" onResetGame={handleResetGame} />
-          ) : (
+          )}
+          {!isLoading && !playerIsWin && (
             <Result txt="you lose" onResetGame={handleResetGame} />
           )}
           <GameResultItem title="the house picked">
