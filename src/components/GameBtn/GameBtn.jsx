@@ -29,15 +29,18 @@ const borderShadow = [
 ];
 
 export default function GameBtn({
-  width = "clamp(2rem, 20vw, 9rem)",
-  borderSize = "1.2rem",
+  width = "clamp(4rem, 28vw, 9rem)",
+  // borderSize = "clamp(0.5rem, 5vw, 1.2)",
+  borderSize = "clamp(0.7rem, 3vw, 1.2rem)",
   imgSize,
   btnMode,
   i,
   onClick = () => {},
-  btnPosition,
+  position = "static",
   loading = false,
+  className = "",
 }) {
+  const classStyle = "game-btn " + className;
   let styleBtn;
   if (loading)
     styleBtn = {
@@ -48,20 +51,17 @@ export default function GameBtn({
   else
     styleBtn = {
       width,
-      position: btnPosition ? "absolute" : "static",
+      position,
       border: `${borderSize} solid transparent`,
       background: `linear-gradient(white, white) padding-box,
     linear-gradient(to bottom, ${borderGradient[i]})
       border-box`,
-      boxShadow: `0 8px 0 ${borderShadow[i]},
-    0 8px 0 rgb(226, 226, 226) inset`,
+      boxShadow: `0 clamp(4px,1vw,8px) 0 ${borderShadow[i]},
+    0 clamp(4px,1vw,8px) 0 rgb(226, 226, 226) inset`,
     };
+  console.log(classStyle);
   return (
-    <div
-      className="game-btn"
-      style={btnPosition ? { ...styleBtn, ...btnPosition } : styleBtn}
-      onClick={onClick}
-    >
+    <div className={classStyle} style={styleBtn} onClick={onClick}>
       {!loading && (
         <img
           src={imagesDataSrc[btnMode]}

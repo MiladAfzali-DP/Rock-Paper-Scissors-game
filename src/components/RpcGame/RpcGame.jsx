@@ -11,33 +11,6 @@ import winLogic from "../../Logic/winLogic";
 import Result from "../Result/Result";
 import botChoiceLogic from "../../Logic/botChoiceLogic";
 
-const gameResultPosition = [
-  {
-    bottom: "-2.5rem",
-    right: "10rem",
-  },
-  {
-    top: "2.5rem",
-    left: "6rem",
-  },
-
-  {
-    top: "-4rem",
-    left: 0,
-    right: 0,
-    margin: "0 auto",
-  },
-  {
-    top: "2.5rem",
-    right: "6rem",
-    //   margin: "0 auto",
-  },
-  {
-    bottom: "-2.5rem",
-    left: "10rem",
-    //   margin: "0 auto",
-  },
-];
 export default function RpcGame() {
   // Data
   const btnLogicDatas = ["rock", "paper", "scissors", "lizard", "spock"];
@@ -59,9 +32,7 @@ export default function RpcGame() {
         if (playerIsWin === true) setScore((score) => score + 1);
         if (playerIsWin === "equal") return;
         if (playerIsWin === false)
-          setScore((score) => (score < 0 ? score - 1 : score));
-
-        console.log(playerIsWin);
+          setScore((score) => (score <= 0 ? score : score - 1));
       }, 500);
     },
     [isLoading]
@@ -108,7 +79,6 @@ export default function RpcGame() {
           ) : (
             <Result txt="you lose" onResetGame={handleResetGame} />
           )}
-
           <GameResultItem title="the house picked">
             <GameBtn
               width="clamp(2rem, 30vw, 14rem)"
@@ -126,6 +96,7 @@ export default function RpcGame() {
           {btnLogicDatas.map((btnData, i) => (
             <GameBtn
               btnMode={btnData}
+              imgSize="clamp(2rem, 9vw, 3.2rem)"
               i={i}
               key={i}
               onClick={() => {
@@ -133,7 +104,8 @@ export default function RpcGame() {
                 handleBotChoice();
                 handleTurnOnLoading();
               }}
-              btnPosition={gameResultPosition[i]}
+              className={`btn${i + 1}`}
+              position="absolute"
             />
           ))}
         </GameOption>

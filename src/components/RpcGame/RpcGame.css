@@ -2,7 +2,60 @@
   /* display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  gap: 10rem; */
+  flex-direction: column; */
   position: relative;
+}
+.btn1 {
+  bottom: -2.5rem;
+  right: 10rem;
+}
+.btn2 {
+  top: 2.5rem;
+  left: 6rem;
+}
+.btn3 {
+  top: -4rem;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+.btn4 {
+  top: 2.5rem;
+  right: 6rem;
+}
+.btn5 {
+  bottom: -2.5rem;
+  left: 10rem;
+}
+
+@media (max-width: 375px) {
+  .rpc-game {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+  }
+  .btn1 {
+    bottom: 0.5rem;
+    right: -0.5rem;
+  }
+  .btn2 {
+    top: 5.3rem;
+    left: 10rem;
+  }
+  .btn3 {
+    top: 0rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+  .btn4 {
+    top: 5.3rem;
+    right: 10rem;
+  }
+  .btn5 {
+    bottom: 0.5rem;
+    left: -0.5rem;
+  }
 }

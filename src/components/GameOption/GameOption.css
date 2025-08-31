@@ -1,5 +1,5 @@
 .main {
-  max-width: 40rem;
+  width: clamp(10rem, 60vw, 40rem);
   height: 19.25rem;
   margin-top: clamp(1rem, 20vw, 6rem);
   display: flex;
@@ -12,14 +12,4 @@
   background-size: contain;
 }
 .main__game-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.main__bg-image {
-  width: clamp(10rem, 50vw, 20rem);
-}
-.main__bg-image img {
-  width: 100%;
-  /* background-color: red; */
 }
