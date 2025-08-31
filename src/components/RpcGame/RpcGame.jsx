@@ -11,12 +11,12 @@ import winLogic from "../../Logic/winLogic";
 import Result from "../Result/Result";
 import botChoiceLogic from "../../Logic/botChoiceLogic";
 
-export default function RpcGame() {
+export default function RpcGame({ score, setScore }) {
   // Data
   const btnLogicDatas = ["rock", "paper", "scissors", "lizard", "spock"];
 
   // State hook
-  const [score, setScore] = useState(0);
+
   const [playerChoice, setPlayerChoice] = useState(null);
   const [botChoice, setBotChoice] = useState(null);
   const [isLoading, setIsLoading] = useState(false);

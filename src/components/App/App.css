@@ -3,4 +3,36 @@
   justify-content: center;
   padding: 1rem 0 1rem;
   height: 100vh;
+  position: relative;
+}
+.btn {
+  /* width: 8rem;
+  height: 2.5rem; */
+  padding: 0.6rem 1.8rem;
+  background-color: inherit;
+  outline: 0;
+  border: 2px solid white;
+  border-radius: 0.4rem;
+  color: white;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 250ms ease-in 20ms;
+}
+.btn:hover {
+  background-color: white;
+  color: inherit;
+  font-weight: bold;
+}
+
+.btn-save {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+}
+.btn-rule {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
 }

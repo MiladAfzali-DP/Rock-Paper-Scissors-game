@@ -59,7 +59,6 @@ export default function GameBtn({
       boxShadow: `0 clamp(4px,1vw,8px) 0 ${borderShadow[i]},
     0 clamp(4px,1vw,8px) 0 rgb(226, 226, 226) inset`,
     };
-  console.log(classStyle);
   return (
     <div className={classStyle} style={styleBtn} onClick={onClick}>
       {!loading && (

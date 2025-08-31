@@ -1,9 +1,10 @@
 import "./Result.css";
+import Button from "../Button/Button";
 export default function Result({ txt, onResetGame }) {
   return (
     <div className="result">
       <p>{txt}</p>
-      <button onClick={onResetGame}>play again</button>
+      <Button onClick={onResetGame}>play again</Button>
     </div>
   );
 }
